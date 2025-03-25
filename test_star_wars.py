@@ -11,4 +11,13 @@ def test_two_letters_first_name():
         'O\'Brien',
         'Edinburgh'
     )
-    assert name == 'Da'
+    assert name == 'da'
+
+
+def test_three_letters_last_name():
+    name = star_wars_name(
+        'Dan van der Jackson',
+        'O\'Brien',
+        'Edinburgh'
+    )
+    assert name == 'Jacda'
