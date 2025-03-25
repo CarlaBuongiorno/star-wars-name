@@ -5,10 +5,19 @@ def test_star_wars_name_exists():
     assert star_wars_name
 
 
-def test_two_letters_first_name():
+def test_one_letter_name():
     name = star_wars_name(
-        'Dan van der Jackson',
-        'O\'Brien',
-        'Edinburgh'
+        'D W',
+        '',
+        ''
     )
-    assert name == 'Da'
+    assert name == 'Wd'
+
+
+def test_two_letter_name():
+    name = star_wars_name(
+        'Da Wu',
+        '',
+        ''
+    )
+    assert name == 'Wuda'

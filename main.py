@@ -29,10 +29,10 @@ from star_wars import star_wars_name
 
 
 def main():
-    full_name = input('Please enter your full name: ')
+    name = input('Please enter your full name: ')
     maiden_name = input('Please enter your mother\'s maiden name: ')
     city = input('Please enter the name of the city where you were born: ')
-    generated_name = star_wars_name(full_name, maiden_name, city)
+    generated_name = star_wars_name(name, maiden_name, city)
     print(generated_name)
 
 
