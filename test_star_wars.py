@@ -21,3 +21,30 @@ def test_two_letter_name():
         ''
     )
     assert name == 'Wuda'
+
+
+def test_three_letter_first_name():
+    name = star_wars_name(
+        'Dan Jac',
+        '',
+        ''
+    )
+    assert name == 'Jacda'
+
+
+def test_four_letter_first_name():
+    name = star_wars_name(
+        'John Jac',
+        '',
+        ''
+    )
+    assert name == 'Jacjo'
+
+
+def test_four_letter_last_name():
+    name = star_wars_name(
+        'John Jack',
+        '',
+        ''
+    )
+    assert name == 'Jacjo'
