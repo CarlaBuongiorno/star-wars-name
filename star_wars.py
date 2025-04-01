@@ -10,9 +10,10 @@ def _clean_input(user_input):
 
 
 def get_star_wars_first_name(name):
-    first_name = name.split()
-    return f'{first_name[-1][:3]}{first_name[0][:2]}'
-
+    if name:
+        full_name = name.split()
+        return f'{full_name[-1][:3]}{full_name[0][:2]}'
+    return name
 
 def get_star_wars_last_name(maiden_name, city):
     return f'{maiden_name[:2]}{city[:3]}'

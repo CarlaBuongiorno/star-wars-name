@@ -8,6 +8,7 @@ def test_star_wars_name_exists():
 
 
 @pytest.mark.parametrize('name, maiden_name, city, excpected', [
+     ('', '', '',                           ' '),
      ('D W', '', '',                        'Wd '),
      ('Da Wu', '', '',                      'Wuda '),
      ('Dan Jac', '', '',                    'Jacda '),
@@ -20,6 +21,7 @@ def test_star_wars_name_exists():
      ('D W', 'O\'Brien', 'E',               'Wd Obe'),
      ('D W', 'O\'Br', 'Edinburgh',          'Wd Obedi'),
      ('D W', '', 'Edinburgh',               'Wd Edi'),
+     ('Dan van der Jackson', 'O\'Brien', 'Edinburgh','Jacda Obedi'),
 ])
 def test_star_wars_name(name, maiden_name, city, excpected):
     assert star_wars_name(name, maiden_name, city,) == excpected
