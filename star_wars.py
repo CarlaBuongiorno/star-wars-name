@@ -7,11 +7,10 @@ def star_wars_name(name, maiden_name, city):
 
 
 def _clean_input(user_input):
-    if len(user_input.split()) > 1:
-        user_input = user_input[-1]
-        return ''.join(i for i in user_input if i.isalnum())
+    split_input = user_input.split()
+    if len(split_input) > 1:
+        return ''.join(i for i in split_input[-1] if i.isalnum())
     return ''.join(i for i in user_input if i.isalnum())
-
 
 
 def get_star_wars_first_name(name):
