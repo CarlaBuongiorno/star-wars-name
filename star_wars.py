@@ -1,16 +1,16 @@
 def star_wars_name(name, maiden_name, city):
-    cleaned_maiden_name = _clean_input(maiden_name)
-    full_name = get_star_wars_first_name(name)
+    cleaned_maiden_name = _clean_maiden_name(maiden_name)
+    star_wars_first_name = get_star_wars_first_name(name)
     if not maiden_name and not city:
-        return f'{full_name}'.title()
-    return f'{full_name} {cleaned_maiden_name[:2]}{city[:3]}'.title()
+        return f'{star_wars_first_name}'.title()
+    return f'{star_wars_first_name} {cleaned_maiden_name[:2]}{city[:3]}'.title()
 
 
-def _clean_input(user_input):
-    split_input = user_input.split()
-    if len(split_input) > 1:
-        return ''.join(i for i in split_input[-1] if i.isalnum())
-    return ''.join(i for i in user_input if i.isalnum())
+def _clean_maiden_name(maiden_name):
+    split_name = maiden_name.split()
+    if len(split_name) > 0:
+        return ''.join(i for i in split_name[-1] if i.isalnum())
+    return ''
 
 
 def get_star_wars_first_name(name):
