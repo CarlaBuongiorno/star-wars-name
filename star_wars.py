@@ -10,11 +10,18 @@ def _clean_maiden_name(maiden_name):
     split_name = maiden_name.split()
     if len(split_name) > 0:
         return ''.join(i for i in split_name[-1] if i.isalnum())
-    return ''
+    else:
+        return ''
 
 
 def get_star_wars_first_name(name):
     full_name = name.split()
-    if len(full_name) > 1:
-        return f'{full_name[-1][:3]}{full_name[0][:2]}'
-    return ''.join(full_name)
+    return f'{get_part_from_last_name(full_name)}{get_part_from_first_name(full_name)}'
+
+
+def get_part_from_first_name(split_full_name):
+    return split_full_name[0][:2] if len(split_full_name) > 0 else ''
+
+
+def get_part_from_last_name(split_full_name):
+    return split_full_name[-1][:3] if len(split_full_name) > 1 else ''

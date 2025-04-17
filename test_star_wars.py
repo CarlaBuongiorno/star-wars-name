@@ -9,7 +9,8 @@ def test_star_wars_name_exists():
 
 @pytest.mark.parametrize('name, maiden_name, city, expected', [
      ('', '', '',                                       ''),
-     ('D', '', '',                                       'D'), # First name
+     ('D', '', '',                                      'D'), # First name
+     ('Madona', '', '',                                 'Ma'), # First name
      ('D W', '', '',                                    'Wd'),
      ('Da Wu', '', '',                                  'Wuda'),
      ('Dan Jac', '', '',                                'Jacda'),
