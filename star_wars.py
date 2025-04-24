@@ -11,7 +11,8 @@ def _get_star_wars_first_name(name):
 
 def _get_star_wars_last_name(maiden_name, city):
     split_maiden_name = maiden_name.split()
-    return f'{_get_part_from_maiden_name(split_maiden_name)}{_get_part_from_city(city)}'
+    split_city = city.split()
+    return f'{_get_part_from_maiden_name(split_maiden_name)}{_get_part_from_city(split_city)}'
 
 
 def _get_part_from_last_name(split_full_name):
@@ -26,5 +27,5 @@ def _get_part_from_maiden_name(split_maiden_name):
     return (''.join(i for i in split_maiden_name[-1] if i.isalnum()))[:2] if len(split_maiden_name) > 0 else ''
 
 
-def _get_part_from_city(city):
-    return city[:3]
+def _get_part_from_city(split_city):
+    return split_city[-1][:3] if len(split_city) > 0 else ''
