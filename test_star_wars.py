@@ -26,6 +26,7 @@ def test_star_wars_name_exists():
      ('Dan van der Jackson', 'O\'Brien', 'Edinburgh',   'Jacda Obedi'),
      ('Dan Jackson', 'van der Jackson', 'Edinburgh',    'Jacda Jaedi'),
      ('Dan Jackson', 'van der Jackson', 'Den Hague',    'Jacda Jahag'),
+     ('D&n Jackson', 'Jackson', '\'s-Hertogenbosch',    'Jacdn Jaher'),
 ])
 def test_star_wars_name(name, maiden_name, city, expected):
     assert star_wars_name(name, maiden_name, city,) == expected
