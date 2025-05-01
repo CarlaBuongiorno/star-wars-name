@@ -18,17 +18,22 @@ def _split_user_input(user_input):
     return user_input.split()
 
 
-def _get_part_from_last_name(split_full_name):
-    return (''.join(i for i in split_full_name[-1] if i.isalpha()))[:3] if len(split_full_name) > 1 else ''
+# There has to be at least 2 parts (1st and last name) 
+def _get_part_from_last_name(full_name):
+    return _get_part(split_input=full_name, part_to_use=-1, amout_of_letters=3, min_word_size=1)
 
 
-def _get_part_from_first_name(split_full_name):
-    return (''.join(i for i in split_full_name[0] if i.isalpha()))[:2] if len(split_full_name) > 0 else ''
+def _get_part_from_first_name(full_name):
+    return _get_part(split_input=full_name, part_to_use=0, amout_of_letters=2, min_word_size=0)
 
 
-def _get_part_from_maiden_name(split_maiden_name):
-    return (''.join(i for i in split_maiden_name[-1] if i.isalpha()))[:2] if len(split_maiden_name) > 0 else ''
+def _get_part_from_maiden_name(maiden_name):
+    return _get_part(split_input=maiden_name, part_to_use=-1, amout_of_letters=2, min_word_size=0)
 
 
-def _get_part_from_city(split_city):
-    return (''.join(i for i in split_city[-1] if i.isalpha()))[:3] if len(split_city) > 0 else ''
+def _get_part_from_city(city):
+    return _get_part(split_input=city, part_to_use=-1, amout_of_letters=3, min_word_size=0)
+
+
+def _get_part(split_input, part_to_use, amout_of_letters, min_word_size):
+    return (''.join(i for i in split_input[part_to_use] if i.isalpha()))[:amout_of_letters] if len(split_input) > min_word_size else ''
